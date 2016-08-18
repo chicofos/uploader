@@ -21,7 +21,7 @@ module.exports = function(express){
 
             //     res.render('index', { images : files });
             // });
-            res.render('index');
+            res.render('index', {images: null});
         });
     
 
