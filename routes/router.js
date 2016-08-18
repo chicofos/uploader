@@ -15,12 +15,13 @@ module.exports = function(express){
             });
         })
         .get(function(req,res){
-            uploader.readFiles(function(err, files){
-                if(err)
-                res.end(err);
+            // uploader.readFiles(function(err, files){
+            //     if(err)
+            //     res.end(err);
 
-                res.render('index', { images : files });
-            });
+            //     res.render('index', { images : files });
+            // });
+            res.end('done');
         });
     
 
