@@ -4,5 +4,8 @@
     </head>
     <body>
         <h1>Images</h1>
+        <% images.forEach(function(image){ %>
+                <img src="<%= image %>" height="100px" >
+        <% }) %>
     </body>
 </html>

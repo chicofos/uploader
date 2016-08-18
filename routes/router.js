@@ -17,12 +17,10 @@ module.exports = function(express){
         .get(function(req,res){
             uploader.readFiles(function(err, files){
                 if(err)
-                    console.log(err);
+                res.end(err);
 
-                console.log(files);
+                res.render('index', { images : files });
             });
-            
-            res.render('index');
         });
     
 
