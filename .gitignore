@@ -29,5 +29,5 @@
 #modules
 node_modules/
 .vscode
-uploads/
+uploads/*
 *.jpg
