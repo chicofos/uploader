@@ -29,11 +29,11 @@ exports.readFiles = (callback) => {
 };
 
 exports.downloadImage = (url, callback) => {
-    
+
     var filename = url.split('/').pop();
 
     request.head(url, (err, res, body) => {
-        var stream = fs.createWriteStream('./uploads/%s', filename);
+        var stream = fs.createWriteStream('./uploads/' + filename);
 
         request(url).pipe(stream);
 
