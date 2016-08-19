@@ -1,28 +1,29 @@
 
 var uploader = require('../uploader/uploader');
 
-module.exports = function(express){
+module.exports = (express) => {
 
-    var router = express.Router();
+    const router = express.Router();
 
     router.route('/')
-        .post(function(req,res){
-            uploader.saveFile(req, function(err, result){
-                if(err)
-                    res.end(err);
-
+        .post((req,res) => {
+            uploader.saveFile(req, (err, result) => {
+                if(err) res.end(err);
                 res.end(result);
             });
         })
-        .get(function(req,res){
-            uploader.readFiles(function(err, files){
-                if(err)
-                res.end(err);
-
+        .get((req,res) => {
+            uploader.readFiles((err, files) => {
+                if(err) res.end(err);
                 res.render('index', { images : files });
             });
         });
+    router.route('/upload')
+        .post((req,res) => {
+            uploader.downloadImage(req.body.url, (err, result) => {
+                res.end(result);
+            });
+        });
     
-
     return router;
 }

@@ -1,7 +1,7 @@
 var express = require('express');
-var app = express();
 var bodyParser = require('body-parser');
 var busboy = require('connect-busboy');
+var app = express();
 
 var port = process.env.PORT || 3000;
 
@@ -14,11 +14,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 app.use(busboy());
 app.use(express.static(__dirname + '/uploads'));
+app.use(express.static(__dirname + '/public'));
 
 //Routes
 var router = require('./routes/router')(express);
 app.use(router);
 
+//Listen
 app.listen(port, function(){
     console.log("Server running on port : %s", port);
 });
