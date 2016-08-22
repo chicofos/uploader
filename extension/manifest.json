@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Image Uploader",
+  "description": "Extension para subir imagenes",
+  "icons":
+   {
+      "128": "icon.png",
+      "16": "icon.png",
+      "48": "icon.png"
+   },
+  "version": "1.0",
+  
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "contextMenus" 
+  ],
+  "background": {
+    "persistent": true,
+    "scripts": ["menu.js"]
+  }
+}

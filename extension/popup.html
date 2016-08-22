@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Uploader</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="./js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="./js/app.js" type="text/javascript"></script>    
+  </head>
+  <body>
+<style>
+  .container{  
+    padding-bottom: 20px;
+  }
+  body{
+    width: 400px;
+  }
+  .uploadBtn{
+    margin-top:10px;
+  }
+
+</style>
+<div class="container" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-12">
+            <form id="uploadForm" enctype="multipart/form-data" action="http://localhost:3000/" method="post">
+              <div class="input-group">
+                  <label class="input-group-btn">
+                      <span class="btn btn-default">
+                          Browse <input type="file" style="display: none;" name="userPhoto" id="inputFile">
+                      </span>
+                  </label>
+                  <input type="text" class="form-control" readonly>
+              </div>
+              <div  class="uploadBtn" align="right">
+                <input type="submit" value="Upload Image" name="submit" class="btn btn-primary" >
+              </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
